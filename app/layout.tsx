@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StarsCanvas from "@/components/main/Starbackground";
 import NavBar from "@/components/NavBar";
-
+import { Analytics } from "@vercel/analytics/react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,9 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
-        <StarsCanvas/>
-        <NavBar/>
+        <StarsCanvas />
+        <NavBar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
